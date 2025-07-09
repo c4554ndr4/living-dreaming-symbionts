@@ -53,6 +53,70 @@ async fn main() {
     test_x_account_verification().await;
     test_prediction_market_verification().await;
     test_discord_survey_verification().await;
+    
+    // Show practical integration example
+    println!("🚀 Practical Integration Example:");
+    demonstrate_llm_integration().await;
+}
+
+/// Demonstrates how to actually integrate with an LLM API for real verification
+async fn demonstrate_llm_integration() {
+    println!("📡 Simulating LLM API call for Manifold Markets verification...");
+    
+    // This shows the pattern for real integration:
+    // 1. Make LLM API call with specific prompt
+    // 2. Parse structured response
+    // 3. Run verification in zkVM
+    // 4. Submit proof on-chain
+    
+    let llm_prompt = r#"
+        Go to manifold.markets and find the market for "Will 90% of Aug Lab 2025 participants present finished projects?".
+        
+        Check if the market has resolved and what the resolution is.
+        
+        Return JSON in this exact format:
+        {
+            "resolved": true/false,
+            "resolution": "YES" or "NO" or "UNRESOLVED",
+            "market_address": "the market URL or ID",
+            "resolution_date": "ISO timestamp if resolved"
+        }
+    "#;
+    
+    println!("   LLM Prompt: {}", llm_prompt.trim());
+    
+    // Simulate LLM response (in real implementation, call Claude/GPT-4 here)
+    let mock_llm_response = r#"{
+        "resolved": true,
+        "resolution": "YES", 
+        "market_address": "https://manifold.markets/AugLab2025/will-90-of-participants-present",
+        "resolution_date": "2025-08-16T15:30:00Z"
+    }"#;
+    
+    println!("   LLM Response: {}", mock_llm_response.trim());
+    
+    // Run verification with LLM data
+    let verification_input = VerificationInput {
+        metric: MetricType::PredictionMarket {
+            market_address: "https://manifold.markets/AugLab2025/will-90-of-participants-present".to_string(),
+            market_question: "Will 90% of Aug Lab participants present projects?".to_string(),
+        },
+        verification_data: mock_llm_response.to_string(),
+    };
+    
+    let result = run_verification(verification_input).await;
+    println!("   ✅ Verification Result:");
+    println!("      Metric Met: {}", if result.metric_met { "✅ YES" } else { "❌ NO" });
+    println!("      Resolution: {}", result.actual_value);
+    println!("      Evidence: {}", result.evidence);
+    
+    println!("\n📋 Next Steps for Production:");
+    println!("   1. Replace mock LLM call with actual API (Claude, GPT-4, etc.)");
+    println!("   2. Add error handling and retry logic");
+    println!("   3. Deploy smart contract to accept verification proofs");
+    println!("   4. Set up automated scheduling for metric checks");
+    println!("   5. Implement reward/penalty distribution system");
+    println!();
 }
 
 async fn test_x_account_verification() {
@@ -100,7 +164,7 @@ async fn test_prediction_market_verification() {
     let verification_input = VerificationInput {
         metric: MetricType::PredictionMarket {
             market_address: "0x1234567890abcdef".to_string(),
-            market_question: "Will 90% of Aug Lab members present projects?".to_string(),
+            market_question: "Will 90% of Aug Lab members present finished projects?".to_string(),
         },
         verification_data: mock_market_data.to_string(),
     };
