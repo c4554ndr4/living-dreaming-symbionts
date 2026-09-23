@@ -1,3 +1,5 @@
+(AI-assisted writeup)
+
 My github projects are presented with AI-assisted writing that I've reviewed. If you would like to check out my fully-human thoughts on my projects, please see my personal website [cassie.mccoy.world](https://cassie.mccoy.world)
 
 # Living Dreaming Symbionts
@@ -12,7 +14,9 @@ This is a local research toolkit, originating in July 2025 and completed for pub
 
 ## Where it fits in an agent's experience
 
-![The agent experience: people agree on a goal, an agent works, evidence is assembled, this toolkit checks the metric, and people review the outcome.](docs/experience.svg)
+![An independently checked proof verifies a calculation over supplied evidence. Met, not met, and indeterminate can all be valid results; evidence truth, completeness, and causation remain separate questions.](docs/project-idea.png)
+
+*Conceptual receipt layout and synthetic survey example. The diagram emphasizes what verification establishes and what remains outside it.*
 
 People and the agent work outside this toolkit. An operator supplies a record of what happened; the toolkit evaluates that record. The result can inform a human review or a later agent run. It does not run the agent, collect live social data, or distribute rewards.
 
@@ -29,8 +33,6 @@ The distinction matters: **the proof establishes that the agreed calculation ran
 At an 80% threshold, three positive answers out of four are insufficient: that is 75%. The survey calculation uses exact integer comparisons. A sample below the agreed minimum is indeterminate; incomplete answers, duplicate respondents, and nonconsenting submissions are rejected.
 
 ## How the proof works
-
-![Architecture: an independently retained agreement and evidence commitment are compared with the verified receipt from the proof engine.](docs/architecture.svg)
 
 1. **Agree.** Set the account, time window, market, or survey rules. Give this evaluation a unique run identifier. Keep the expected policy and evidence fingerprint independently of the prover.
 2. **Supply evidence.** Provide individual post records, a market resolution, or classified survey answers. The system checks identities, duplicates, completeness, bounds, and metric-specific rules.
