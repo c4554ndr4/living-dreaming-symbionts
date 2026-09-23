@@ -1,3 +1,5 @@
+(AI-assisted writeup)
+
 # Living Dreaming Symbionts
 
 **An experiment in giving AI companions goals people can inspect—and outcomes they can check.**
