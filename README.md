@@ -1,4 +1,4 @@
-(AI-assisted writeup)
+My github projects are presented with AI-assisted writing that I've reviewed. If you would like to check out my fully-human thoughts on my projects, please see my personal website [cassie.mccoy.world](https://cassie.mccoy.world)
 
 # Living Dreaming Symbionts
 
