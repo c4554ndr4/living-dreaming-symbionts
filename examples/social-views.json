@@ -1,0 +1,39 @@
+{
+  "policy": {
+    "schema_version": 1,
+    "run_id": "synthetic-demo-social-views-2025-07",
+    "metric": {
+      "kind": "social_views",
+      "account": "demo-community",
+      "window_start": 1751328000,
+      "window_end": 1751932800,
+      "views_must_exceed": 30000
+    }
+  },
+  "evidence": {
+    "kind": "social_views",
+    "account": "demo-community",
+    "posts": [
+      {
+        "id": "post-1",
+        "published_at": 1751328000,
+        "views": 12000
+      },
+      {
+        "id": "post-2",
+        "published_at": 1751414400,
+        "views": 8500
+      },
+      {
+        "id": "post-3",
+        "published_at": 1751500800,
+        "views": 15000
+      },
+      {
+        "id": "post-4",
+        "published_at": 1751587200,
+        "views": 9500
+      }
+    ]
+  }
+}

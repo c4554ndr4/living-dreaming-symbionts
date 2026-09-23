@@ -1,0 +1,16 @@
+flowchart TB
+    P["Agreed policy<br/>Goal · scope · thresholds · run ID"] --> I
+    E["Supplied evidence<br/>Individual records, not claimed totals"] --> I
+    I["Validate and recompute<br/>Shared deterministic rules"] --> Z["Local proof engine<br/>Run the rules inside RISC Zero"]
+    Z --> R["Saved receipt<br/>Proof + aggregate result + fingerprints"]
+    X["Verifier's retained expectation<br/>Trusted policy + evidence fingerprint"] --> V
+    R --> V["Independent verifier<br/>Check proof, program, and expectation"]
+    V --> O["Verified outcome<br/>Met · not met · indeterminate"]
+    P -. "retain before trusting the prover" .-> X
+    E -. "agree which evidence is being checked" .-> X
+    classDef inputs fill:#f5f4f0,stroke:#aca89d,color:#31362f;
+    classDef compute fill:#e0eee5,stroke:#427358,color:#183e2a;
+    classDef verify fill:#e8e8f5,stroke:#676794,color:#33334f;
+    class P,E inputs;
+    class I,Z,R compute;
+    class X,V,O verify;

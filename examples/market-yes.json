@@ -1,0 +1,17 @@
+{
+  "policy": {
+    "schema_version": 1,
+    "run_id": "synthetic-demo-market-yes-2025-07",
+    "metric": {
+      "kind": "market_resolution",
+      "market_id": "demo-market:completed-projects",
+      "question": "Did the demo team present its completed projects?"
+    }
+  },
+  "evidence": {
+    "kind": "market_resolution",
+    "market_id": "demo-market:completed-projects",
+    "question": "Did the demo team present its completed projects?",
+    "resolution": "yes"
+  }
+}

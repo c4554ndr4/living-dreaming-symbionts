@@ -1,0 +1,83 @@
+{
+  "policy": {
+    "schema_version": 1,
+    "run_id": "synthetic-demo-participant-survey-2025-07",
+    "metric": {
+      "kind": "participant_survey",
+      "community_id": "demo-community",
+      "survey_id": "summer-reflection",
+      "question_ids": [
+        "experience",
+        "project",
+        "learning",
+        "connection"
+      ],
+      "minimum_respondents": 5,
+      "positive_answers_bps": 8000,
+      "positive_respondents_bps": 8000
+    }
+  },
+  "evidence": {
+    "kind": "participant_survey",
+    "community_id": "demo-community",
+    "survey_id": "summer-reflection",
+    "question_ids": [
+      "experience",
+      "project",
+      "learning",
+      "connection"
+    ],
+    "respondents": [
+      {
+        "id": "participant-1",
+        "consented": true,
+        "positive_answers": [
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "id": "participant-2",
+        "consented": true,
+        "positive_answers": [
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "id": "participant-3",
+        "consented": true,
+        "positive_answers": [
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "id": "participant-4",
+        "consented": true,
+        "positive_answers": [
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "id": "participant-5",
+        "consented": true,
+        "positive_answers": [
+          true,
+          true,
+          true,
+          false
+        ]
+      }
+    ]
+  }
+}

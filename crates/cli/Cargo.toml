@@ -1,0 +1,22 @@
+[package]
+name = "symbiont"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[features]
+default = []
+zk = ["dep:risc0-zkvm", "dep:symbiont-methods"]
+
+[dependencies]
+anyhow = "1.0.98"
+clap = { version = "4.5.40", features = ["derive"] }
+serde.workspace = true
+serde_json.workspace = true
+symbiont-core.workspace = true
+risc0-zkvm = { workspace = true, optional = true, features = ["prove", "disable-dev-mode"] }
+symbiont-methods = { path = "../../methods", optional = true }
+
+[dev-dependencies]
+tempfile = "3.20.0"

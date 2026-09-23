@@ -1,0 +1,11 @@
+flowchart TB
+    A["People agree on a goal<br/>What outcome would help?"] --> B["Agent works toward the goal<br/>Existing agent and tools"]
+    B --> C["Operator assembles evidence<br/>Collection happens outside this toolkit"]
+    C --> D["Living Dreaming Symbionts<br/>Validate records · calculate · prove"]
+    D --> E["Independent verification<br/>Met · not met · indeterminate"]
+    E --> F["People review the outcome<br/>Decide what to try next"]
+    F -. "next iteration" .-> A
+    classDef outside fill:#f5f4f0,stroke:#aca89d,color:#31362f;
+    classDef implemented fill:#e0eee5,stroke:#427358,color:#183e2a,stroke-width:2px;
+    class A,B,C,F outside;
+    class D,E implemented;

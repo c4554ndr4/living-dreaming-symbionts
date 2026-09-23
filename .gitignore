@@ -1,0 +1,6 @@
+/target/
+/artifacts/
+/methods/guest/target/
+.DS_Store
+.env
+.env.*
